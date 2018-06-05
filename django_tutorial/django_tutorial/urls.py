@@ -13,15 +13,10 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.urls import include,path
-from django.contrib import admin#point the urlConf at polls.urls module
-#from . import views
+from django.contrib import admin
+from django.urls import include, path
 
 urlpatterns = [
     path('polls/', include('polls.urls')),
     path('admin/', admin.site.urls),
 ]
-
-#include function references other URLconfs.
-#url매칭 안되는 부분 sends to URLconf for further processing
-#plug and play URLs
